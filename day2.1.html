@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>2.1</title>
+<script type="text/javascript" charset="utf-8">
+
+function domManipulate() {
+	var body = document.getElementById("wrap");
+	var paras = body.getElementsByTagName("p");
+	alert('hello');
+	
+}
+
+window.onload = domManipulate();
+
+</script>
+</head>
+<body class="wrap">
+	
+<p id="one">This is 1 DOM node</p>
+<p id="two">This is another DOM node, might be 4</p>
+<p id="three">This is another DOM node, might be 5</p>
+
+</body>
+</html>

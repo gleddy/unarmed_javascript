@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>5.1</title>
+<script type="text/javascript" charset="utf-8">
+
+var exerciseFiveObjectOne = {
+    slotNameA: "Some string",
+    slotNameB: {},
+    slotNameC: function () {
+        return "Some function";
+    },
+    slotNameD: true
+};
+
+var exerciseFiveObjectTwo = {
+    name: "Five"
+}
+
+var moveObjects = function() {
+	for(var object in exerciseFiveObjectOne) {
+		var key = object;
+		var slot = exerciseFiveObjectOne[object];
+		exerciseFiveObjectTwo[key] = slot;
+	}
+	for(var object in exerciseFiveObjectTwo) {
+		alert(object)
+	}
+}
+
+window.onload = moveObjects();
+
+</script>
+</head>
+<body class="wrap">
+	
+<p id="result">No Result</p>
+
+</body>
+</html>

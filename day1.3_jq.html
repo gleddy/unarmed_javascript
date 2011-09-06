@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>day1.3 JQuery</title>
+<script src="jquery_v1.4.2.js"></script>
+<script charset="utf-8">
+
+$(document).ready(function() {
+	var bucket = [];
+	
+	$('p').each(function() {
+		var text = $(this).text();
+		var num = text.match(/[\d\.]+/g);
+		bucket.push(num);		
+	});
+	
+	var total = 0;
+	for (var i=0; i < bucket.length; i++) {
+		total = parseInt(total) + parseInt(bucket[i]);	
+	};
+	
+	alert(total);
+	
+});
+</script>
+</head>
+<body>
+    
+<p id="one">This is 1 DOM node</p>
+<p id="two">This is another DOM node, might be 4</p>
+<p id="two">This is another DOM node, might be 5</p>
+
+</body>
+</html>

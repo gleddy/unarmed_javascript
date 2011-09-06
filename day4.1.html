@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>4.1</title>
+<script type="text/javascript" charset="utf-8">
+
+// functions
+var arr1 = [2,3,4103,8,11,50,1,100,4,7,122];
+var arr2 = [1,2,3,4,5,6,7,9,10];
+var bucket = [];
+
+var underEight = function(arr) {
+	for (var i=0; i < arr.length; i++) { 
+		if (arr[i] <= 8) {
+			bucket.push(arr[i]);
+		}
+	}
+	alert(bucket);
+}
+
+var filterEight = function(el) {
+	if(el < 8) { return el; }
+}
+
+
+var underEightAgain = function(arr) {
+	alert(arr.filter(filterEight));
+}
+
+var reverseArray = function(arr) {
+	while (arr.length > 0) {
+		var last = arr.pop();
+		bucket.push(last);
+	}
+	alert(bucket);
+}
+
+
+
+window.onload = underEightAgain(arr2);
+
+
+</script>
+</head>
+<body class="wrap">
+	
+<p id="result">No Result</p>
+
+</body>
+</html>

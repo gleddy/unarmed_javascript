@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>day 7.1 JQuery</title>
+<script src="jquery_v1.4.2.js"></script>
+<style type="text/css" media="screen">
+	.indent { text-indent: 20px; }
+</style>
+<script charset="utf-8">
+
+$(document).ready(function() {
+
+	$('#trigger').click(function() {
+		$('p').addClass('indent');
+	});
+	
+});
+
+</script>
+</head>
+<body>
+    
+	<button id="trigger">click me</button>
+
+	<p>This is the first paragraph, you should indent me.</p>
+	<p>This is the second paragraph, you should indent me.</p>
+	<p>This is the third paragraph, you should indent me.</p>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>6.1</title>
+<script type="text/javascript" charset="utf-8">
+
+var one = function() {
+	var a = 5;
+	alert(a);
+}
+// a = 5, because it's global var
+
+// 2
+var two = function()  {
+	var a = 5;
+	var f = function() {
+	    alert(a);
+	}
+	f();
+}
+// a = 5, var is global
+
+var three = function() {
+	var f = function() {
+	    var a = 5;
+	}
+	alert(a);
+}
+
+// a = undefined, can't find a (error) - defined within a function, called outside the function
+
+var four = function() {
+	var f = function() {
+	    var a = 5;
+	    var fn = function() {
+	        alert(a); // what will a be here?
+	    }
+	    fn();
+	}
+	f();
+}
+// a = 5, called in f(), so still OK
+
+var five = function() {
+	var a = 3;
+	var f = function() {
+	    var a = 5;
+	    var fn = function() {
+	        alert(a); // what will a be here?
+	    }
+	    fn();
+	}
+	f();
+}
+// a = 5, called within scope of inner function (still 5)
+
+var six = function() {
+	var a = 3;
+	var f = function() {
+	    var a = 2;
+	}
+	alert(a);
+}
+// a = 3, a is global 3 unless called within f();
+
+var seven = function() {
+	var a = 3;
+	var f = function() {
+	    a = 2;
+	}
+	f();
+	alert(a);
+}
+// a = 2, a inside f() is global so will effect the variable
+
+var eight = function() {
+	var a = 3;
+	var f = function() {
+	    var a = 2;
+	}
+	f();
+	alert(a);
+}
+// a = 3, f() a variable is local and does not effect global var
+
+window.onload = eight;
+
+</script>
+</head>
+<body class="wrap">
+	
+<p id="result">No Result</p>
+
+</body>
+</html>

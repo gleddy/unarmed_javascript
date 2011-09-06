@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>3.1</title>
+<script type="text/javascript" charset="utf-8">
+
+// functions
+
+var returnZero = function() {
+	return 0;
+}
+
+var returnFunc = function() {
+	return func
+}
+
+var recursive = function(number) {
+	// take a number
+	// - if 0, return 0
+	// - if 1, return 1
+	// otherwise, keep going
+	
+	// (b == 5) ? a="true" : a="false";
+	(number > 1) ? alert('bigger') : recursive(number);
+}
+
+var recursive2 = function(number) {
+	// take a number
+	// - return 0 if 0
+	// - return 1 if 1
+	// - or return number - 1
+	(number == 1 || 0) ? return number : return recursive2(number - 1);
+	
+}
+
+window.onload = recursive(12);
+
+
+</script>
+</head>
+<body class="wrap">
+	
+<p id="one">This is 1 DOM node</p>
+<p id="two">This is another DOM node, might be 4</p>
+<p id="three">This is another DOM node, might be 5</p>
+
+</body>
+</html>

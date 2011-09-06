@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>day1.3 JQuery</title>
+<script src="jquery_v1.4.2.js"></script>
+<style type="text/css" media="screen">
+	.blue { border: 1px solid blue; }
+</style>
+<script charset="utf-8">
+
+// Write a function that takes a list of element ids (or any number of ids as arguments) and gives every element in that list a blue border.
+
+$(document).ready(function() {
+
+	$('p').addClass("blue");
+	
+});
+
+</script>
+</head>
+<body>
+    
+<p id="one">This is 1 DOM node</p>
+<p id="two">This is another DOM node, might be 4</p>
+<p id="three">This is another DOM node, might be 5</p>
+
+</body>
+</html>

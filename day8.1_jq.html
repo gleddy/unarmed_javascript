@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>day 8.1 JQuery</title>
+<script src="jquery_v1.4.2.js"></script>
+<style type="text/css" media="screen">
+	.red { background: red; border: 1px solid red; }
+</style>
+<script charset="utf-8">
+
+// Write some code to find all instances of these abbreviations in a document and replace them with HTML for the abbreviations.
+// For example, NSW would be replaced by <abbr title="New South Wales">NSW</abbr>.
+
+var dictionary = {
+    "NSW": "New South Wales",
+    "QLD": "Queensland",
+    "NT": "Northern Territory",
+    "VIC": "Victoria",
+    "TAS": "Tasmania",
+    "WA": "Western Australia",
+    "SA": "South Australia",
+    "ACT": "Australia Capital Territory"
+};
+
+
+$(document).ready(function() {
+	
+	// for (key in dictionary) {
+	// 		var reg = new RegExp(key);
+	// 		var string = $('p').text();
+	// 		var match = string.replace(reg, '<strong>' + reg + '</strong>');
+	// 		alert(match);
+	// 	}
+	
+	var reg = new RegExp(dictionary[0]);
+	var string = $('p').text();
+	var match = string.replace(reg, '<strong>' + reg + '</strong>');
+	alert(match);
+	
+});
+
+</script>
+</head>
+<body>
+    
+<p>This is a sentence with the abbreviation NSW in it, hopefully it gets sorted by JavaScript. What about QLD </p>
+
+</body>
+</html>
