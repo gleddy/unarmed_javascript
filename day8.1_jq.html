@@ -3,9 +3,10 @@
 <html>
 <head>
     <title>day 8.1 JQuery</title>
-<script src="jquery_v1.4.2.js"></script>
+<script src="jquery_v1.6.2.js"></script>
 <style type="text/css" media="screen">
-	.red { background: red; border: 1px solid red; }
+	abbr { background:  yellow; }
+	strong { background: yellow; }
 </style>
 <script charset="utf-8">
 
@@ -23,28 +24,33 @@ var dictionary = {
     "ACT": "Australia Capital Territory"
 };
 
+function do_abbr(str){
+	return dictionary[str] ? '<abbr title="' + dictionary[str] + '">' + str + '<\/abbr>' : str;
+}
 
 $(document).ready(function() {
 	
-	// for (key in dictionary) {
-	// 		var reg = new RegExp(key);
-	// 		var string = $('p').text();
-	// 		var match = string.replace(reg, '<strong>' + reg + '</strong>');
-	// 		alert(match);
-	// 	}
+	var text = $('#text'); // text to use 
+	var str = $(text).html(); // string to change 
 	
-	var reg = new RegExp(dictionary[0]);
-	var string = $('p').text();
-	var match = string.replace(reg, '<strong>' + reg + '</strong>');
-	alert(match);
+	for (key in dictionary) {
+		var reg = new RegExp(key); 
+		var str = str.replace(reg, do_abbr); 
+	}
+	
+	$(text).html(str);
 	
 });
 
 </script>
 </head>
 <body>
-    
-<p>This is a sentence with the abbreviation NSW in it, hopefully it gets sorted by JavaScript. What about QLD </p>
+
+<strong>Original Text</strong>
+<p>This is a sentence with the abbreviation NSW in it, hopefully it gets sorted by JavaScript. What about QLD and NT?</p>
+ 
+<strong>Updated Text</strong>   
+<p id="text">This is a sentence with the abbreviation NSW in it, hopefully it gets sorted by JavaScript. What about QLD and NT?</p>
 
 </body>
 </html>
