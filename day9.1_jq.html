@@ -2,22 +2,61 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>day 8.1 JQuery</title>
+    <title>day 9.1 JQuery</title>
 <script src="jquery_v1.6.2.js"></script>
 <style type="text/css" media="screen">
-	.red { background: red; border: 1px solid red; }
+	
 </style>
 <script charset="utf-8">
 
 // Write some code to find all instances of a rel-tag in a page and extract them into a map of tags and number of occurrences for each tag. Hint: Remember our dictionary from the last exercise?
 // 
-// Write some code to generate a tag cloud from these tags. Note: I really dislike tag clouds.
+// Write some code to generate a tag cloud from these tags.
+
+var bucket = [];
+var clone = [];
+
+
+
+$('document').ready(function() {
+	
+	$('a').each(function(index, domEl) { // loop through all hrefs
+		
+		if($(domEl).attr('rel')) { // if href has 'rel' attribute
+			var tag = $(domEl).text(); // store text of href (with 'rel' attribute)
+			bucket.push(tag);
+		}
+	});	
+	
+	/// fuccccccccckkkkkkkkkkk!
+
+});
 
 </script>
 </head>
 <body>
+	
+	<h1>The Almost People</h1>
+	<p>I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why. No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister. You hit me with a cricket bat. Did I mention we have comfy chairs? I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why.</p>
+	<h2>The Doctor's Daughter</h2>
+	<p>They're not <a href="#" rel="tag">aliens</a>, they're Earth&hellip;liens! Father Christmas. Santa Claus. Or as I've always <a href="#" rel="tag">known</a> him: Jeff. You hate me; you want to kill me! Well, go on! Kill me! KILL ME! I'm the Doctor, I'm worse than everyone's aunt. *catches himself* And that is not how I'm introducing myself. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?</p>
+	<ul>
+	<li>Heh-haa! Super squeaky bum time!</li>
+	<li>Stop talking, brain thinking. Hush.</li>
+	<li>Aw, you're all Mr. Grumpy Face today.</li>
+	</ul>
+	<h3>Blink</h3>
+	<p>Did I mention we have comfy <a href="#" rel="tag">chairs</a>? *Insistently* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do! You've swallowed a planet!</p>
+	<h4>The Shakespeare Code</h4>
+	<p><a href="#" rel="tag">aliens</a> I am the last of my species, and I know how that weighs on the heart so don't lie to me! The way I see it, every life is a pile of good things and bad things.&hellip;hey.&hellip;the good things don't always soften the bad things; but vice-versa the bad things don't necessarily spoil the good things and make them <a href="#" rel="tag">unimportant</a>. All I've got to do is pass as an ordinary human being. Simple. What could possibly go wrong? Saving the world with meals on wheels. Annihilate? No. No <a href="#" rel="tag">violence</a>. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming <a href="#" rel="tag">aliens</a> Storm - and you basically meant beat them in a football match, didn't you?</p>
+	<ol>
+	<li>Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you?</li>
+	<li>I'm the Doctor. Well, they call me the Doctor. I don't know why. I call me the Doctor too. I still don't know why.</li>
+	<li>You hate me; you want to kill me! Well, go on! Kill me! KILL ME!</li>
+	</ol>
+	<h5>Gridlock</h5>
+	<p>I'm nobody's taxi <a href="#" rel="tag">service</a>; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship. I hate yogurt. It's just stuff with bits in. I'm nobody's taxi service; I'm not gonna be there to catch you every time you feel like jumping out of a spaceship. They're not aliens, they're Earth&hellip;liens! It's art! <a href="#" rel="tag">violence</a> A statement on modern society, 'Oh Ain't Modern Society Awful?'! Heh-haa! Super squeaky bum time!</p>
     
-<p>This is a sentence with the abbreviation NSW in it, hopefully it gets sorted by JavaScript. What about QLD </p>
 
 </body>
 </html>
