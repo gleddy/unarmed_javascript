@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>day 12 JQuery</title>
+	<script src="jquery_v1.6.2.js"></script>
+
+
+
+	<script>
+
+	// Write some code to listen on the keypresses on a textarea and duplicate the value in the textarea to a div on the page.
+	// http://www.unarmedjavascript.com/2008/08/20/musical-keyboard/
+
+	var dupeText = {
+	
+		init: function() {
+			
+			$('#input').bind('keypress', function(e) {
+				var char = String.fromCharCode(e.which);
+				var curText = $('#input').val() + char; // current value + the current typed char
+				$('#output').text(curText);
+				
+			});
+		}
+	}
+	
+	$(document).ready(function() {
+	  dupeText.init();
+	});
+	
+	</script>
+
+</head>
+<body>
+    
+<textarea id="input" type="text" /></textarea>
+
+<div id="output">
+	output
+</div>
+
+</body>
+</html>

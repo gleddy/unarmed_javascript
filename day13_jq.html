@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>day 13 JQuery</title>
+	<script src="jquery_v1.6.2.js"></script>
+
+
+
+	<script>
+
+	// Read some documentation for appendChild (http://developer.mozilla.org/en/DOM/element.appendChild)
+
+	// Write code to loop through a document and move all <li>’s that are inside <ul>’s with a class of source to a single <ul> in the document with an id of target. You must then delete all empty <ul>’s.
+
+	var gatherSource = {
+		
+		delete: function(li) {
+		}
+		init: function() {
+			
+			// something here
+		}
+	}
+	
+	$(document).ready(function() {
+	  gatherSource.init();
+	});
+	
+	</script>
+
+</head>
+<body>
+    
+	<ul id="target">
+		<li>something</li>
+	</ul>
+
+	<ul class="source">
+		<li>something</li>
+		<li>something else</li>
+	</ul>
+
+	<ul class="source">
+		<li>another</li>
+		<li>something other</li>
+	</ul>
+
+</body>
+</html>

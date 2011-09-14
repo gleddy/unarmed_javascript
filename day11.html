@@ -19,22 +19,17 @@
 var test = "http://www.something.com/#5+2*4";
 // (window.location.hash)
 
-function mathURL() {
-	var hash = "#1+2*2" // window.location.hash;
-	var nums = hash.substr(1, hash.length);
-	var arr = nums.split('');
-	var string = arr.join(' ');
-	var output = eval(string);
-	// console.log(hash);
-	// 	console.log(hash.length);
-	// 	console.log(nums);
-	// 	console.log(arr);
-	// 	console.log(string);
-	// 	console.log(output);
-	return output;
+function calcURL() {
+	var hash = window.location.hash;
+	var bucket = hash.split('#');
+	var nums = bucket[1];
+	var math = eval(nums);
+	
+	return math;
+
 }
 
-console.log(mathURL());
+console.log(calcURL());
 
 // ** currently only works with single digit nums (the split method is splitting 10 into 1 0...
 
