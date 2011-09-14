@@ -2,9 +2,10 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>day 13 JQuery</title>
+    <title>day 13</title>
 	<script src="jquery_v1.6.2.js"></script>
-
+	<script src="functions.js"></script>
+	
 
 
 	<script>
@@ -12,34 +13,33 @@
 	// Read some documentation for appendChild (http://developer.mozilla.org/en/DOM/element.appendChild)
 
 	// Write code to loop through a document and move all <li>’s that are inside <ul>’s with a class of source to a single <ul> in the document with an id of target. You must then delete all empty <ul>’s.
-
+	
 	var gatherSource = {
 		
+		deleteNodes: function() {
+			// **** delete nodes not done
+		},
+		
 		init: function() {
-			var target = $('#target');
-			var source = $('.source li');
+			var target = document.getElementById('target');
+			var source = $('.source li'); // fuck the old way of getClassName
 			var bucket = [];
 			
-			$.each(source, function(index,value) {
-				bucket.push(value);
-			});
-			
-			$('ul.source').remove();
+			for (var i=0; i < source.length; i++) {
+				bucket.push(source[i]);
+			};
+
+			console.log(bucket);
 			
 			for (var i=0; i < bucket.length; i++) {
-				target.append(bucket[i]);
+				target.appendChild(bucket[i]);
 			}
 		}
 	}
-	
-	$(document).ready(function() {
-		gatherSource.init();
-	});
-	
 	</script>
 
 </head>
-<body>
+<body id="body">
     
 	<ul id="target">
 		<li>something</li>
@@ -54,6 +54,9 @@
 		<li>another</li>
 		<li>something other</li>
 	</ul>
+<script>
+	gatherSource.init();
+</script>
 
 </body>
 </html>
