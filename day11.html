@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>day 11</title>
+<script src="jquery_v1.6.2.js"></script>
+
+
+
+<script charset="utf-8">
+
+// Write some code to read arithmetic from the current url hash and innerHTML the answer to an element on the page.
+// You can assume for this exercise that the only thing in the url hash will be some arithmetic.
+// An example url is http://www.example.com/#5+2∗4. 
+// You only need to deal with plus (+), minus (-), multiply (*) and divide (/) operators.
+// You do not need to worry about parentheses but you must observe the standard operator precedence.
+// Note that your code is only expected to handle integer values correctly.
+
+var test = "http://www.something.com/#5+2*4";
+// (window.location.hash)
+
+function mathURL() {
+	var hash = "#1+2*2" // window.location.hash;
+	var nums = hash.substr(1, hash.length);
+	var arr = nums.split('');
+	var string = arr.join(' ');
+	var output = eval(string);
+	// console.log(hash);
+	// 	console.log(hash.length);
+	// 	console.log(nums);
+	// 	console.log(arr);
+	// 	console.log(string);
+	// 	console.log(output);
+	return output;
+}
+
+console.log(mathURL());
+
+// ** currently only works with single digit nums (the split method is splitting 10 into 1 0...
+
+</script>
+</head>
+<body>
+    
+
+
+</body>
+</html>
