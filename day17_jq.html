@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>day 17 - JQuery</title>
+	<script src="jquery_v1.6.2.js"></script>
+
+	<style>
+	a {
+	display: block;
+	padding: 10px 20px;
+	border-bottom: 1px solid #efefef;
+	}
+	</style>
+
+
+	<script>
+
+	// http://www.unarmedjavascript.com/2008/08/28/popups/
+	// Create a function that when a link is clicked with a rel value of “popup” it is opened in a popup window.
+
+	// Reference:
+
+	// window.open - http://developer.mozilla.org/En/DOM:window.open
+	// event.target - http://developer.mozilla.org/en/DOM/event.target
+	// element.onclick - http://developer.mozilla.org/en/DOM/element.onclick
+	// prevent default event action (following link) - http://www.quirksmode.org/js/events_early.html#link3
+
+	var popWindow = {
+
+		init: function() {
+			var self = this;
+			$('a').each(function(index, value) {
+				if ($(this).attr('rel') == 'popup') {
+					$(this).click(self.openWindow);
+			   	}
+			});
+		}, 
+
+		openWindow: function(e) {
+			var url = this.href;
+			var newWindow = window.open(url, 'kid');
+			e.preventDefault();
+		}
+
+	}
+	
+	$(document).ready(function() {
+		popWindow.init();
+	});
+
+
+	</script>
+
+</head>
+<body>
+ 
+<a href="http://www.pinchzoom.com">PinchZoom</a>
+<a id='trigger' rel="popup" href="http://www.google.com">Google (popup)</a>
+
+</body>
+</html>
+

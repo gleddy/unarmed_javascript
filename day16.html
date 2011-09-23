@@ -32,21 +32,15 @@ background: red;
 
 var zebraStripe = {
 			
-		// init: function(tb_class, row_class, interval) {
-		// 	$('table.' + tb_class + ' tr:nth-child(' + interval + 'n)').addClass(row_class);
-		// }
-		
-		init: function(tb_name, row_name, interval) {
-			var table = getElementsByClassName(document, 'table', tb_name);
-			for (var i=0; i < table.length; i++) {
-				var rows = table[i].getElementsByTagName('tr');
-				for (var i=0; i < rows.length; i=i+interval) {
-					rows[i].className = row_name;
-				};
-			};
-	
+	init: function(tb_name, row_name, interval) {
+		var table = getElementsByClassName(document, 'table', tb_name);
+		for (var i=0; i < table.length; i++) {
+			var rows = table[i].getElementsByTagName('tr');
+			for (var i=0; i < rows.length; i=i+interval) {
+				rows[i].className = row_name;
+			}
 		}
-
+	}
 }
 
 
@@ -217,7 +211,7 @@ var zebraStripe = {
 <script>
 	window.onload = function() {
 		zebraStripe.init('data', 'red', 5);
-	};
+	}
 </script>
 
 
