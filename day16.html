@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>day 16</title>
+	<script src="functions.js"></script>
+
+<style> 
+table {
+margin: 20px;
+}
+table td {
+padding: 5px;
+}
+table th {
+background: #efefef;
+}
+table tr.yellow {
+background: yellow;
+}
+table tr.red {
+background: red;
+}
+</style>
+
+
+<script>
+
+// http://www.unarmedjavascript.com/2008/08/27/zebra-tables/
+// Target a bunch of HTML tables, adding a class name of “data” to some of them (Not all). For every second row of the “data” tables apply a class name of “even”.
+
+// Bonus: Allow the function to be flexible enough to permit the parameters for the target table class, interval between rows, & class for the zebra row.
+
+var zebraStripe = {
+			
+		// init: function(tb_class, row_class, interval) {
+		// 	$('table.' + tb_class + ' tr:nth-child(' + interval + 'n)').addClass(row_class);
+		// }
+		
+		init: function(tb_name, row_name, interval) {
+			var table = getElementsByClassName(document, 'table', tb_name);
+			for (var i=0; i < table.length; i++) {
+				var rows = table[i].getElementsByTagName('tr');
+				for (var i=0; i < rows.length; i=i+interval) {
+					rows[i].className = row_name;
+				};
+			};
+	
+		}
+
+}
+
+
+</script>
+
+</head>
+<body>
+  
+<table cellspacing="0">
+	<thead>
+		<tr>
+			<th>header</th>
+			<th>header</th>
+			<th>header</th>
+			<th>header</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+	</tbody>
+</table>
+
+<table cellspacing="0">
+	<thead>
+		<tr>
+			<th>header</th>
+			<th>header</th>
+			<th>header</th>
+			<th>header</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+	</tbody>
+</table>
+
+<table class="data" cellspacing="0">
+	<thead>
+		<tr>
+			<th>header</th>
+			<th>header</th>
+			<th>header</th>
+			<th>header</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+		<tr>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+			<td>Data</td>
+		</tr>
+	</tbody>
+</table>
+
+<script>
+	window.onload = function() {
+		zebraStripe.init('data', 'red', 5);
+	};
+</script>
+
+
+</body>
+</html>
+
