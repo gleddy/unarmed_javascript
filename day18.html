@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Day <!-- Day Num --></title>
+	<script src="functions.js"></script>
+
+		<style>
+		</style>
+
+
+		<script>
+		// http://www.unarmedjavascript.com/2008/08/29/creating-tables-on-the-fly-with-json/
+		// Using the JSON object below create a HTML table “on the fly”. (check picture at URL above)
+
+		weatherForecast = {
+
+		    "Saturday": {
+		        summary: "clearing shower",
+		        maximum: "18°C",
+		        minimum: "9°C"
+		    },
+
+		    "Sunday": {
+		        summary: "cloud increasing",
+		        maximum: "20°C",
+		        minimum: "9°C"
+		    },
+
+		    "Monday": {
+		        summary: "clearing shower",
+		        maximum: "22°C",
+		        minimum: "13°C"
+		    },
+
+		    "Tuesday": {
+		        summary: "Showers",
+		        maximum: "17°C",
+		        minimum: "11°C"
+		    },
+
+		    "Wednesday": {
+		        summary: "Fine",
+		        maximum: "18°C",
+		        minimum: "9°C"
+		    }
+		};
+
+		var makeTable = {
+
+			init: function() {
+
+			}
+		}
+
+		</script>
+
+	</head>
+
+<body>
+  
+<!-- markup here -->
+
+
+<!-- hacky onload function -->
+<script>
+	window.onload = function() {
+		makeTable.init();
+	}
+</script>
+</body>
+</html>
+
