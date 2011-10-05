@@ -1,10 +1,21 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>day <!-- daynumber --> - JQuery</title>
+    <title>day 18 - JQuery</title>
 	<script src="jquery_v1.6.2.js"></script>
 
 	<style>
+	table {
+	width: 200px;
+	height: 200px;
+	}
+	table th {
+	padding: 5px;
+	background: #eee;
+	}
+	table td {
+	padding: 5px;
+	}
 	</style>
 
 
@@ -16,44 +27,72 @@
 
 	    "Saturday": {
 	        summary: "clearing shower",
-	        maximum: "18°C",
-	        minimum: "9°C"
+	        maximum: "18 C",
+	        minimum: "9 C"
 	    },
 
 	    "Sunday": {
 	        summary: "cloud increasing",
-	        maximum: "20°C",
-	        minimum: "9°C"
+	        maximum: "20 C",
+	        minimum: "9 C"
 	    },
 
 	    "Monday": {
 	        summary: "clearing shower",
-	        maximum: "22°C",
-	        minimum: "13°C"
+	        maximum: "22 C",
+	        minimum: "13 C"
 	    },
 
 	    "Tuesday": {
 	        summary: "Showers",
-	        maximum: "17°C",
-	        minimum: "11°C"
+	        maximum: "17 C",
+	        minimum: "11 C"
 	    },
 
 	    "Wednesday": {
 	        summary: "Fine",
-	        maximum: "18°C",
-	        minimum: "9°C"
+	        maximum: "18 C",
+	        minimum: "9 C"
+	    },
+	    "Thursday": {
+	    	summary: "Hot!",
+	    	maximum: "31 C",
+	    	minimum: "10 C"
 	    }
 	};
 	
-	var makeTable = {
-
+	var weatherReport = {
+		
+		createTable: function(id) {
+			var table_shell = $('<table><thead><tr><th>Day</th><th>Summary</th><th>Maximum</th><th>Minimum</th></tr></thead><tbody></tbody></table>');
+			table_shell.attr('id', id);
+			$('body').append(table_shell)
+		},
+		
 		init: function() {
-
+			var self = this;
+			
+			self.createTable('weather');
+			
+			for(key in weatherForecast) {
+			
+				// returns day
+				var th = '<tr><th>' + key + '</th></tr>';
+				$('#weather tbody').append(th);
+				
+				for(val in weatherForecast[key]) {
+				
+					// returns day details
+					var td = '<td>' + weatherForecast[key][val] + '</td>';
+					$('#weather tbody tr:last-child').append(td);
+				}
+			
+			}
 		}
 	}
 	
 	$(document).ready(function() {
-		makeTable.init();
+		weatherReport.init();
 	});
 	
 	</script>
